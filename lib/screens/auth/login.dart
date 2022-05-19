@@ -1,7 +1,7 @@
 import 'package:audilisten/util/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:social_login_buttons/social_login_buttons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../widgets/button.dart';
 
@@ -132,46 +132,78 @@ class LoginScreen extends StatelessWidget {
                       ),
                       Align(
                         alignment: Alignment.centerRight,
-                        child: Text(
-                          "Forgot password?",
-                          style:
-                          TextStyle(color: Colors.red, fontSize: 14.sp),
+                        child: InkWell(
+
+                          onTap: () {
+
+                          },
+                          child: Text(
+                            "Forgot password?",
+                            style: TextStyle(color: Colors.red, fontSize: 14.sp),
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 0.02.sh,
                       ),
+                      Text(
+                        "Or login with",
+                        style: TextStyle(color: Colors.black, fontSize: 14.sp),
+                      ),
+                      SizedBox(
+                        height: 0.02.sh,
+                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Expanded(
-                            child: SocialLoginButton(
-                              height: 0.1.sh,
-                              width: 0.2.sw,
-                              text: "",
-                              buttonType: SocialLoginButtonType.google,
-                              onPressed: () {},
-                            ),
+                          Container(
+                            child: const Icon(FontAwesomeIcons.google,),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.black)),
+                            width: 0.25.sw,
+                            height: 0.07.sh,
+                          ),
+                           Container(
+                            child: const Icon(FontAwesomeIcons.facebook,),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.black)),
+                            width: 0.25.sw,
+                            height: 0.07.sh,
+                          ),
+                           Container(
+                            child: const Icon(FontAwesomeIcons.twitter,),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(color: Colors.black)),
+                            width: 0.25.sw,
+                            height: 0.07.sh,
                           ),
 
-                          Expanded(
-                            child: SocialLoginButton(
-                              height: 0.1.sh,
-                              width: 0.2.sw,
-                              text: "",
-                              buttonType: SocialLoginButtonType.facebook,
-                              onPressed: () {},
-                            ),
-                          ),
-                          Expanded(
-                            child: SocialLoginButton(
-                              height: 0.1.sh,
-                              width: 0.2.sw,
-                              text: "",
-                              buttonType: SocialLoginButtonType.twitter,
-                              onPressed: () {},
-                            ),
-                          ),
                         ],
+                      ),
+                      SizedBox(
+                        height: 0.02.sh,
+                      ),
+                      InkWell(
+
+                        onTap: () {
+
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Don't have an account?  ",
+                              style: TextStyle(color: Colors.black, fontSize: 14.sp),
+                            ),
+                            Text(
+                              "Register",
+                              style: TextStyle(color: Colors.red, fontSize: 14.sp),
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),
