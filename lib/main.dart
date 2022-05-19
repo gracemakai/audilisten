@@ -1,3 +1,4 @@
+import 'package:audilisten/screens/auth/login.dart';
 import 'package:audilisten/screens/onboading/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
             title: "AudiListen",
             theme: theme(),
             debugShowCheckedModeBanner: false,
-            home: OnBoardingScreen(),
+            home: LoginScreen(),
           );
         }
     );
